@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm thi khối D</title>
+</head>
+<body>
+   <h1><b>Tính điểm đại học khối D</b></h1> 
+   Môn Toán : 
+   <input type="number" id="montoan"><br>
+   Môn Văn  :
+   <input type="number" id="monvan"><br>
+   Môn Anh :
+   <input type="number" id="monanh"><br>
+   Khu Vực :
+   <select name="chonkv" id="chonkv">
+    <option value="0.75">KV1</option>
+    <option value="0.5">KV2-NT</option>
+    <option value="0.25">KV2</option>
+    <option value="0">KV3</option>
+    </select><br>
+    <button type="button" onclick="congdiem()">Check</button>
+    <div id="in"></div>
+    <script>
+        function congdiem(){
+               let diemtoan = parseFloat(document.getElementById("montoan").value);
+               let diemvan = parseFloat(document.getElementById("monvan").value);
+               let diemanh = parseFloat(document.getElementById("monanh").value);
+               let congkvx = parseFloat(document.getElementById("chonkv").value);
+               let tong = diemanh + diemtoan + diemvan + congkvx;            
+               document.getElementById("in").innerHTML = "Tổng điểm của bạn là: " + tong;
+            }
+    </script>
+   </select>
+</body>
+</html>
